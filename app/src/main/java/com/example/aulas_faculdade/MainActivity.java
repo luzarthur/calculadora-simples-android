@@ -33,7 +33,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String op_selected = operacoes.getSelectedItem().toString();
                 num1 = Integer.parseInt(et_valor1.getText().toString());
-                num2 = Integer.parseInt(et_valor2.getText().toString());
+                if(op_selected.equals("Raiz")){
+                    et_valor2.setText("");
+                    num2 = 0;
+                }else {
+                    num2 = Integer.parseInt(et_valor2.getText().toString());
+                }
 
                 if (op_selected.equals("Somar")) {
                     res = num1 + num2;
@@ -43,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                     res = num1 / num2;
                 } else if (op_selected.equals("Multiplicar")) {
                     res = num1 * num2;
+                } else if (op_selected.equals("Potencia")){
+                    res = (int)Math.round(Math.pow(num1,num2));
+                } else if (op_selected.equals("Raiz")){
+                    res = (int)Math.round(Math.sqrt(num1));
+                }else if (op_selected.equals("MOD")){
+                    res = num1 % num2;
+                } else if (op_selected.equals("Porcentagem")){
+                    res = (num1*num2)/100;
                 }
                 resultado.setText(String.valueOf(res));
             }

@@ -5,5 +5,9 @@
         <item>Subtrair</item>
         <item>Dividir</item>
         <item>Multiplicar</item>
+        <item>MOD</item>
+        <item>Potencia</item>
+        <item>Raiz</item>
+        <item>Porcentagem</item>
     </string-array>
 </resources>
